@@ -1,112 +1,179 @@
-#  Plant Disease Detector
+# 🌿 Plant Disease Detector using CNN
 
-A deep learning web app that detects plant leaf diseases using a custom CNN model trained on the **PlantVillage Dataset**.
+A deep learning web application that detects plant leaf diseases using a custom **Convolutional Neural Network (CNN)** model trained on the **PlantVillage Dataset**.
 
-## 🌿 Disease Classes
-| Class | Risk | Description |
-|-------|------|-------------|
-| ✅ Healthy | None | No infection detected |
-| ⚠️ Early Blight | Medium | Caused by *Alternaria solani* fungus |
-| 🔴 Late Blight | High | Caused by *Phytophthora infestans* |
+---
 
-🛠️ Technologies Used
-Python
-TensorFlow / Keras
-NumPy
-Pandas
-Matplotlib
-Scikit-learn
+## 📌 Features
+
+* 🌱 Detect plant diseases from leaf images
+* 🧠 CNN-based deep learning model
+* 📷 Upload JPG / PNG / JPEG images
+* 📊 Displays prediction with confidence score
+* 💊 Provides treatment recommendations
+* ⚡ Fast and user-friendly interface
+
+---
+
+# 🌿 Disease Classes
+
+| Class           | Risk Level | Description                          |
+| --------------- | ---------- | ------------------------------------ |
+| ✅ Healthy       | None       | No infection detected                |
+| ⚠️ Early Blight | Medium     | Caused by *Alternaria solani* fungus |
+| 🔴 Late Blight  | High       | Caused by *Phytophthora infestans*   |
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* TensorFlow / Keras
+* NumPy
+* Pandas
+* Matplotlib
+* Scikit-learn
+* Flask
+* HTML / CSS / JavaScript
+
+---
 
 ## 🚀 How to Use
+
 1. Open `index.html` in any modern browser
-2. Upload a plant leaf photo (JPG / PNG / JPEG — max 10MB)
-3. Click **"Detect Disease"**
-4. View the prediction, confidence score, and treatment plan
+2. Upload a plant leaf image (`JPG / PNG / JPEG`, max 10MB)
+3. Click **Detect Disease**
+4. View:
 
-📦 Installation
+   * Disease Prediction
+   * Confidence Score
+   * Treatment Plan
 
-Clone the repository:
+---
 
-git clone https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN
-cd plant-disease-detection
+## 📦 Installation
 
-Install dependencies:
+### Clone the repository
 
+```bash
+git clone https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN.git
+cd PLANT-DISEASE-DETECTION-USING-CNN
+```
+
+### Install dependencies
+
+```bash
 pip install -r requirements.txt
-▶️ Run the Project
+```
 
-Train the model:
+---
 
+## ▶️ Run the Project
+
+### Train the model
+
+```bash
 python train.py
+```
 
-Run prediction:
+### Run prediction
 
+```bash
 python predict.py
+```
 
-If using a web app:
+### Run the web application
 
+```bash
 python app.py
+```
+
+---
 
 ## 🧠 Model Architecture
-- **4 Convolutional Blocks** (32 → 64 → 128 → 256 filters)
-- Flatten → Dense → Softmax (3-class output)
-- Framework: TensorFlow + Flask
-- Dataset: PlantVillage
-- Plant-Disease-Detection
+
+The CNN model consists of:
+
+* 4 Convolutional Blocks
+  `(32 → 64 → 128 → 256 filters)`
+* Max Pooling Layers
+* Dropout Layers
+* Flatten Layer
+* Dense Fully Connected Layers
+* Softmax Activation (3-class output)
+
+### Workflow
+
+```text
+Input Image → CNN Layers → Feature Extraction → Classification → Disease Prediction
+```
+
+---
+
+## 📂 Project Structure
+
+```bash
+PLANT-DISEASE-DETECTION-USING-CNN/
 │
-├── dataset/                # Dataset containing plant leaf images
-├── models/                 # Saved trained models
-├── notebooks/              # Jupyter notebooks
-├── src/                    # Source code
+├── dataset/                 # Plant leaf image dataset
+├── models/                  # Saved trained models
+├── notebooks/               # Jupyter notebooks
+├── src/                     # Source code
 │   ├── train.py
 │   ├── predict.py
 │   └── preprocessing.py
 │
+├── index.html               # Frontend UI
+├── app.py                   # Flask backend
 ├── requirements.txt
-├── README.md
-└── app.py
+└── README.md
+```
 
- CNN Architecture
+---
 
-The CNN model includes:
-
-->Convolution Layers
-->Max Pooling Layers
-->Dropout Layers
-->Fully Connected Dense Layers
-->Softmax Activation for Classification
-
-Example workflow:
-
-Input Image → CNN Layers → Feature Extraction → Classification → Disease Prediction
-
-📊 Dataset
+## 📊 Dataset
 
 This project uses plant leaf image datasets for training and testing.
-You can use datasets from:
 
-PlantVillage Dataset
-Kaggle Plant Disease datasets
+### Dataset Sources
+
+* PlantVillage Dataset
+* Kaggle Plant Disease Datasets
+
+---
 
 ## 📁 Files
+
+```bash
+├── index.html      # Frontend interface
+├── app.py          # Flask application
+├── README.md
 ```
-├── index.html      # Main frontend (all-in-one HTML/CSS/JS)
-└── README.md
 
+---
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!
 
-Fork the repository  https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN
-Create a new branch
-Commit your changes
-Push to the branch
-Open a Pull Request
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
 
-📜 License
+Repository Link:
+
+https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN
+
+---
+
+## 📜 License
+
 This project is licensed under the MIT License.
 
+---
+
+## ⭐ Support
+
 If you like this project, give it a ⭐ on GitHub!
-If you like this project, give it a ⭐ on GitHub!
-``
