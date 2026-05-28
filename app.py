@@ -47,7 +47,7 @@ INFO = {
 }
 
 print("Loading CNN model...")
-model = tf.keras.models.load_model('plant_model.h5')
+
 print("Model ready!")
 
 def allowed(filename):
