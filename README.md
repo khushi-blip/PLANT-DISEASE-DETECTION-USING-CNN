@@ -151,6 +151,8 @@ This project uses plant leaf image datasets for training and testing.
 ```
 
 ---
+This project runs entirely in the browser using TensorFlow.js.
+No Python backend or installation is required.
 
 ## 🤝 Contributing
 
