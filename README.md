@@ -173,16 +173,6 @@ The model was evaluated using:
 
 ---
 
-# 💡 Future Improvements
-
-- Support more plant species
-- Mobile application integration
-- Real-time camera detection
-- Cloud deployment
-- Explainable AI visualizations
-- Multi-disease classification
-
----
 
 # 📜 License
 
