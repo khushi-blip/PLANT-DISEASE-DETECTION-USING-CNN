@@ -1,97 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <title>Plant Disease Detector</title>
 
-  <link rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Disease Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="header">
-  <h1>🌿 Plant Disease Detector</h1>
-  <p>CNN Deep Learning — Flask Web App</p>
+    <h1>🌿 Plant Disease Detector</h1>
+    <p>CNN Deep Learning Web Application</p>
 </div>
 
 <div class="main">
 
-  {% if error %}
-  <div class="alert">
-    ⚠ {{ error }}
-  </div>
-  {% endif %}
-
-  <form action="/predict"
-        method="POST"
-        enctype="multipart/form-data">
-
-    <div class="drop-zone"
-         onclick="document.getElementById('fi').click()">
-
-      <span>📷 Click or drag & drop a plant leaf image</span>
-
-      <input type="file"
-             id="fi"
-             name="file"
-             accept=".jpg,.jpeg,.png"
-             onchange="previewImg(event)">
+    {% if error %}
+    <div class="alert">
+        ⚠ {{ error }}
     </div>
-
-    <img id="preview"
-         style="display:none;max-height:220px;margin-top:1rem;border-radius:10px"/>
-
-    <button type="submit" class="btn">
-      🔍 Detect Disease
-    </button>
-
-  </form>
-
-  {% if result %}
-  <div class="result-card">
-
-    <h2>{{ result.display_name }}</h2>
-
-    <p><b>Confidence:</b> {{ result.confidence }}%</p>
-
-    <p><b>Severity:</b> {{ result.severity }}</p>
-
-    <p>{{ result.desc }}</p>
-
-    <p>
-      <b>Treatment:</b>
-      {{ result.treat }}
-    </p>
-
-    {% if image_url %}
-    <img src="{{ image_url }}"
-         width="220"
-         style="margin-top:1rem;border-radius:10px"/>
     {% endif %}
 
-    <a href="/">↩ Try Another Image</a>
+    <form action="/predict"
+          method="POST"
+          enctype="multipart/form-data">
 
-  </div>
-  {% endif %}
+        <div class="drop-zone"
+             onclick="document.getElementById('fi').click()">
+
+            <span>📷 Click or drag & drop a plant leaf image</span>
+
+            <input type="file"
+                   id="fi"
+                   name="file"
+                   accept=".jpg,.jpeg,.png"
+                   onchange="previewImg(event)">
+        </div>
+
+        <img id="preview">
+
+        <button type="submit" class="btn">
+            🔍 Detect Disease
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result-card">
+
+        <h2>{{ result.display_name }}</h2>
+
+        <p>
+            <b>Confidence:</b>
+            {{ result.confidence }}%
+        </p>
+
+        <p>
+            <b>Severity:</b>
+            {{ result.severity }}
+        </p>
+
+        <p>{{ result.desc }}</p>
+
+        <p>
+            <b>Treatment:</b>
+            {{ result.treat }}
+        </p>
+
+        {% if image_url %}
+        <img src="{{ image_url }}" width="220">
+        {% endif %}
+
+        <a href="/">↩ Try Another Image</a>
+
+    </div>
+
+    {% endif %}
 
 </div>
 
 <script>
+
 function previewImg(e) {
 
-  const file = e.target.files[0];
+    const file = e.target.files[0];
 
-  const preview = document.getElementById('preview');
+    const preview = document.getElementById('preview');
 
-  const reader = new FileReader();
+    const reader = new FileReader();
 
-  reader.onload = ev => {
-    preview.src = ev.target.result;
-    preview.style.display = 'block';
-  };
+    reader.onload = ev => {
 
-  reader.readAsDataURL(file);
+        preview.src = ev.target.result;
+        preview.style.display = 'block';
+    };
+
+    reader.readAsDataURL(file);
 }
+
 </script>
 
 </body>
