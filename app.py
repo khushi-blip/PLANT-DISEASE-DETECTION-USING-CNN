@@ -1,4 +1,4 @@
-import os, json
+import os
 import numpy as np
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
@@ -6,6 +6,7 @@ from PIL import Image
 import tensorflow as tf
 
 app = Flask(__name__)
+
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
 
@@ -14,31 +15,33 @@ os.makedirs('static/uploads', exist_ok=True)
 ALLOWED = {'jpg', 'jpeg', 'png', 'bmp', 'webp'}
 
 CLASS_NAMES = [
-    'Potato___Early_blight',
-    'Potato___Late_blight',
-    'Potato___healthy'
+    'Early_blight',
+    'Late_blight',
+    'Healthy'
 ]
 
 DISPLAY = {
-    'Potato___Early_blight': 'Early Blight',
-    'Potato___Late_blight': 'Late Blight',
-    'Potato___healthy': 'Healthy',
+    'Early_blight': 'Early Blight',
+    'Late_blight': 'Late Blight',
+    'Healthy': 'Healthy',
 }
 
 INFO = {
-    'Potato___Early_blight': {
-        'desc': 'Alternaria solani fungus. Dark brown rings on leaves.',
-        'treat': 'Spray Chlorothalonil every 7 days. Remove infected leaves.',
+    'Early_blight': {
+        'desc': 'Fungal disease causing dark brown spots on leaves.',
+        'treat': 'Apply fungicide and remove infected leaves.',
         'severity': 'Medium'
     },
-    'Potato___Late_blight': {
-        'desc': 'Phytophthora infestans — spreads very fast.',
-        'treat': 'Apply Mancozeb immediately. Destroy infected plants.',
+
+    'Late_blight': {
+        'desc': 'Rapidly spreading disease affecting plant leaves.',
+        'treat': 'Apply fungicide immediately and isolate infected plants.',
         'severity': 'High'
     },
-    'Potato___healthy': {
-        'desc': 'No disease detected. Plant is healthy.',
-        'treat': 'Continue regular watering and fertilization.',
+
+    'Healthy': {
+        'desc': 'No disease detected. Plant looks healthy.',
+        'treat': 'Continue proper watering and care.',
         'severity': 'None'
     }
 }
@@ -52,6 +55,7 @@ def allowed(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED
 
 def predict(path):
+
     img = Image.open(path).convert('RGB')
     img = img.resize((224, 224))
 
@@ -86,17 +90,23 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict_route():
+
     if 'file' not in request.files:
-        return render_template('index.html', error='No file uploaded!')
+        return render_template('index.html',
+                               error='No file uploaded!')
 
     file = request.files['file']
 
     if not allowed(file.filename):
-        return render_template('index.html', error='JPG/PNG only!')
+        return render_template('index.html',
+                               error='Only JPG/PNG images allowed!')
 
     fname = secure_filename(file.filename)
 
-    save_path = os.path.join(app.config['UPLOAD_FOLDER'], fname)
+    save_path = os.path.join(
+        app.config['UPLOAD_FOLDER'],
+        fname
+    )
 
     file.save(save_path)
 
