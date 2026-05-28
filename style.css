@@ -1,0 +1,181 @@
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f0e8;
+  color:#1a1208;
+  min-height:100vh;
+}
+
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+.header{
+  background:#1a1208;
+  color:#fff;
+  padding:1.5rem;
+  text-align:center;
+}
+
+.header h1{
+  font-size:1.8rem;
+  margin-bottom:5px;
+}
+
+.header p{
+  font-size:.9rem;
+  opacity:.7;
+}
+
+/* ─────────────────────────────────────────
+   MAIN CONTAINER
+───────────────────────────────────────── */
+.main{
+  max-width:600px;
+  margin:2rem auto;
+  padding:0 1rem;
+}
+
+/* ─────────────────────────────────────────
+   DROP ZONE
+───────────────────────────────────────── */
+.drop-zone{
+  border:2px dashed #b5b5b5;
+  border-radius:14px;
+  background:#fff;
+  padding:3rem 1rem;
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.drop-zone:hover{
+  border-color:#2d5a1b;
+  background:#f6fff4;
+}
+
+.drop-zone span{
+  font-size:1rem;
+  font-weight:600;
+  color:#444;
+}
+
+input[type=file]{
+  display:none;
+}
+
+/* ─────────────────────────────────────────
+   IMAGE PREVIEW
+───────────────────────────────────────── */
+#preview{
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+  margin-top:1rem;
+  border-radius:12px;
+  border:1px solid #ddd;
+}
+
+/* ─────────────────────────────────────────
+   BUTTON
+───────────────────────────────────────── */
+.btn{
+  width:100%;
+  margin-top:1rem;
+  padding:14px;
+  border:none;
+  border-radius:50px;
+  background:#2d5a1b;
+  color:white;
+  font-size:1rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#3d7a28;
+}
+
+/* ─────────────────────────────────────────
+   ALERT BOX
+───────────────────────────────────────── */
+.alert{
+  background:#ffe8e8;
+  border:1px solid #ffb3b3;
+  color:#a30000;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:1rem;
+}
+
+/* ─────────────────────────────────────────
+   RESULT CARD
+───────────────────────────────────────── */
+.result-card{
+  background:white;
+  border-radius:16px;
+  padding:1.5rem;
+  margin-top:1.5rem;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.result-card h2{
+  font-size:1.6rem;
+  margin-bottom:.8rem;
+  color:#2d5a1b;
+}
+
+.result-card p{
+  margin-bottom:.6rem;
+  line-height:1.6;
+  color:#333;
+}
+
+.result-card img{
+  width:100%;
+  max-width:250px;
+  border-radius:12px;
+  margin-top:1rem;
+}
+
+/* ─────────────────────────────────────────
+   TRY AGAIN LINK
+───────────────────────────────────────── */
+.result-card a{
+  display:inline-block;
+  margin-top:1rem;
+  text-decoration:none;
+  color:#2d5a1b;
+  font-weight:700;
+}
+
+.result-card a:hover{
+  text-decoration:underline;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE RESPONSIVE
+───────────────────────────────────────── */
+@media(max-width:600px){
+
+  .header h1{
+    font-size:1.4rem;
+  }
+
+  .drop-zone{
+    padding:2rem 1rem;
+  }
+
+  .btn{
+    font-size:.95rem;
+  }
+
+}
