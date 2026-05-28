@@ -40,7 +40,7 @@ A deep learning web application that detects plant leaf diseases using a custom 
 
 ## 🚀 How to Use
 
-1. Open `index.html` in any modern browser
+1. Open **Plant Disease Detector** in any modern browser
 2. Upload a plant leaf image (`JPG / PNG / JPEG`, max 10MB)
 3. Click **Detect Disease**
 4. View:
@@ -55,14 +55,14 @@ A deep learning web application that detects plant leaf diseases using a custom 
 
 ### Clone the repository
 
-```bash
+```bash id="nxnljn"
 git clone https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN.git
 cd PLANT-DISEASE-DETECTION-USING-CNN
 ```
 
 ### Install dependencies
 
-```bash
+```bash id="wj10iu"
 pip install -r requirements.txt
 ```
 
@@ -72,19 +72,19 @@ pip install -r requirements.txt
 
 ### Train the model
 
-```bash
+```bash id="r0z4ui"
 python train.py
 ```
 
 ### Run prediction
 
-```bash
+```bash id="3s9lmz"
 python predict.py
 ```
 
 ### Run the web application
 
-```bash
+```bash id="v1dbz2"
 python app.py
 ```
 
@@ -102,9 +102,9 @@ The CNN model consists of:
 * Dense Fully Connected Layers
 * Softmax Activation (3-class output)
 
-### Workflow
+### CNN Workflow
 
-```text
+```text id="1yj4f4"
 Input Image → CNN Layers → Feature Extraction → Classification → Disease Prediction
 ```
 
@@ -112,7 +112,7 @@ Input Image → CNN Layers → Feature Extraction → Classification → Disease
 
 ## 📂 Project Structure
 
-```bash
+```bash id="3c6ojg"
 PLANT-DISEASE-DETECTION-USING-CNN/
 │
 ├── dataset/                 # Plant leaf image dataset
@@ -123,7 +123,7 @@ PLANT-DISEASE-DETECTION-USING-CNN/
 │   ├── predict.py
 │   └── preprocessing.py
 │
-├── index.html               # Frontend UI
+├── Plant Disease Detector   # Frontend UI
 ├── app.py                   # Flask backend
 ├── requirements.txt
 └── README.md
@@ -144,9 +144,9 @@ This project uses plant leaf image datasets for training and testing.
 
 ## 📁 Files
 
-```bash
-├── index.html      # Frontend interface
-├── app.py          # Flask application
+```bash id="64rpwp"
+├── Plant Disease Detector   # Main frontend interface
+├── app.py                   # Flask backend
 ├── README.md
 ```
 
