@@ -1,11 +1,7 @@
 # 🌿 Plant Disease Detector
 
-A deep learning based web application that detects potato plant diseases from leaf images using a custom Convolutional Neural Network (CNN).  
-The system can identify:
-
-- ✅ Healthy
-- ⚠️ Early Blight
-- 🔴 Late Blight
+A deep learning based web application that detects plant leaf diseases from leaf images using a custom Convolutional Neural Network (CNN).  
+The system can identify diseased and healthy plant leaves using AI-powered image classification.
 
 The project combines TensorFlow/Keras, Flask, and a modern frontend UI to provide real-time disease prediction directly from uploaded plant leaf images.
 
@@ -13,7 +9,7 @@ The project combines TensorFlow/Keras, Flask, and a modern frontend UI to provid
 
 # 📌 Features
 
-- 🌱 Detects potato leaf diseases using CNN
+- 🌱 Detects plant leaf diseases using CNN
 - 📷 Upload plant leaf images
 - 🔍 Real-time disease prediction
 - 📊 Confidence score display
@@ -30,8 +26,8 @@ The project combines TensorFlow/Keras, Flask, and a modern frontend UI to provid
 | Disease | Risk Level | Description |
 |---|---|---|
 | Healthy | None | No disease detected |
-| Early Blight | Medium | Caused by Alternaria solani fungus |
-| Late Blight | High | Caused by Phytophthora infestans |
+| Early Blight | Medium | Fungal disease affecting plant leaves |
+| Late Blight | High | Rapidly spreading plant leaf disease |
 
 ---
 
@@ -103,12 +99,12 @@ Dataset structure:
 
 ```bash
 dataset/
-├── Potato___Early_blight
-├── Potato___Late_blight
-└── Potato___healthy
+├── Early_blight
+├── Late_blight
+└── Healthy
 ```
 
-Dataset includes augmented potato leaf images for training and validation.
+Dataset includes augmented plant leaf images for training and validation.
 
 ---
 
@@ -187,7 +183,6 @@ The model was evaluated using:
 - Multi-disease classification
 
 ---
-
 
 # 📜 License
 
