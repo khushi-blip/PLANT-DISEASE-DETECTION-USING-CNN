@@ -113,7 +113,7 @@ Dataset includes augmented plant leaf images for training and validation.
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/Plant-Disease-Detector.git
+git clone https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN
 ```
 
 ---
