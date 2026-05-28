@@ -1,181 +1,203 @@
-# 🌿 Plant Disease Detector using CNN
+# 🌿 Plant Disease Detector
 
-A deep learning web application that detects plant leaf diseases using a custom **Convolutional Neural Network (CNN)** model trained on the **PlantVillage Dataset**.
+A deep learning based web application that detects potato plant diseases from leaf images using a custom Convolutional Neural Network (CNN).  
+The system can identify:
 
----
+- ✅ Healthy
+- ⚠️ Early Blight
+- 🔴 Late Blight
 
-## 📌 Features
-
-* 🌱 Detect plant diseases from leaf images
-* 🧠 CNN-based deep learning model
-* 📷 Upload JPG / PNG / JPEG images
-* 📊 Displays prediction with confidence score
-* 💊 Provides treatment recommendations
-* ⚡ Fast and user-friendly interface
+The project combines TensorFlow/Keras, Flask, and a modern frontend UI to provide real-time disease prediction directly from uploaded plant leaf images.
 
 ---
 
-# 🌿 Disease Classes
+# 📌 Features
 
-| Class           | Risk Level | Description                          |
-| --------------- | ---------- | ------------------------------------ |
-| ✅ Healthy       | None       | No infection detected                |
-| ⚠️ Early Blight | Medium     | Caused by *Alternaria solani* fungus |
-| 🔴 Late Blight  | High       | Caused by *Phytophthora infestans*   |
-
----
-
-## 🛠️ Technologies Used
-
-* Python
-* TensorFlow / Keras
-* NumPy
-* Pandas
-* Matplotlib
-* Scikit-learn
-* Flask
-* HTML / CSS / JavaScript
+- 🌱 Detects potato leaf diseases using CNN
+- 📷 Upload plant leaf images
+- 🔍 Real-time disease prediction
+- 📊 Confidence score display
+- 💊 Treatment recommendations
+- 🧠 Custom-trained deep learning model
+- 🌐 Flask-based web application
+- 🎨 Responsive modern UI
+- ⚡ Fast prediction system
 
 ---
 
-## 🚀 How to Use
+# 🧠 Disease Classes
 
-1. Open **Plant Disease Detector** in any modern browser
-2. Upload a plant leaf image (`JPG / PNG / JPEG`, max 10MB)
-3. Click **Detect Disease**
-4. View:
-
-   * Disease Prediction
-   * Confidence Score
-   * Treatment Plan
+| Disease | Risk Level | Description |
+|---|---|---|
+| Healthy | None | No disease detected |
+| Early Blight | Medium | Caused by Alternaria solani fungus |
+| Late Blight | High | Caused by Phytophthora infestans |
 
 ---
 
-## 📦 Installation
+# 🛠️ Technologies Used
 
-### Clone the repository
+- Python
+- TensorFlow / Keras
+- Flask
+- NumPy
+- Pillow
+- Matplotlib
+- Scikit-learn
+- HTML5
+- CSS3
 
-```bash id="nxnljn"
-git clone https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN.git
-cd PLANT-DISEASE-DETECTION-USING-CNN
+---
+
+# 📂 Project Structure
+
+```bash
+Plant-Disease-Detector/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+├── plant_model.h5
+├── class_indices.json
+├── training_history.png
+├── confusion_matrix.png
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── uploads/
+│
+├── dataset/
+│
+└── screenshots/
 ```
 
-### Install dependencies
+---
 
-```bash id="wj10iu"
+# 🧪 Model Architecture
+
+The CNN model contains:
+
+- Multiple Conv2D layers
+- Batch Normalization
+- MaxPooling layers
+- Dropout regularization
+- Dense fully connected layers
+- Softmax output layer
+
+Input Image Size:
+
+```python
+224 × 224 × 3
+```
+
+---
+
+# 📊 Dataset
+
+Dataset structure:
+
+```bash
+dataset/
+├── Potato___Early_blight
+├── Potato___Late_blight
+└── Potato___healthy
+```
+
+Dataset includes augmented potato leaf images for training and validation.
+
+---
+
+# 🚀 Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/Plant-Disease-Detector.git
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Run the Project
+## 3️⃣ Run Application
 
-### Train the model
-
-```bash id="r0z4ui"
-python train.py
-```
-
-### Run prediction
-
-```bash id="3s9lmz"
-python predict.py
-```
-
-### Run the web application
-
-```bash id="v1dbz2"
+```bash
 python app.py
 ```
 
 ---
 
-## 🧠 Model Architecture
+## 4️⃣ Open in Browser
 
-The CNN model consists of:
-
-* 4 Convolutional Blocks
-  `(32 → 64 → 128 → 256 filters)`
-* Max Pooling Layers
-* Dropout Layers
-* Flatten Layer
-* Dense Fully Connected Layers
-* Softmax Activation (3-class output)
-
-### CNN Workflow
-
-```text id="1yj4f4"
-Input Image → CNN Layers → Feature Extraction → Classification → Disease Prediction
+```bash
+http://127.0.0.1:5000
 ```
 
 ---
 
-## 📂 Project Structure
+# 📸 Application Workflow
 
-```bash id="3c6ojg"
-PLANT-DISEASE-DETECTION-USING-CNN/
-│
-├── dataset/                 # Plant leaf image dataset
-├── models/                  # Saved trained models
-├── notebooks/               # Jupyter notebooks
-├── src/                     # Source code
-│   ├── train.py
-│   ├── predict.py
-│   └── preprocessing.py
-│
-├── Plant Disease Detector   # Frontend UI
-├── app.py                   # Flask backend
-├── requirements.txt
-└── README.md
-```
+1. Upload plant leaf image  
+2. CNN model processes image  
+3. Disease prediction generated  
+4. Confidence score displayed  
+5. Treatment recommendation shown  
 
 ---
 
-## 📊 Dataset
+# 📈 Training Features
 
-This project uses plant leaf image datasets for training and testing.
-
-### Dataset Sources
-
-* PlantVillage Dataset
-* Kaggle Plant Disease Datasets
-
----
-
-## 📁 Files
-
-```bash id="64rpwp"
-├── Plant Disease Detector   # Main frontend interface
-├── app.py                   # Flask backend
-├── README.md
-```
-
----
-This project runs entirely in the browser using TensorFlow.js.
-No Python backend or installation is required.
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push to your branch
-5. Open a Pull Request
-
-Repository Link:
-
-https://github.com/khushi-blip/PLANT-DISEASE-DETECTION-USING-CNN
+- Data Augmentation
+- Class Weight Balancing
+- Early Stopping
+- ReduceLROnPlateau
+- Model Checkpointing
 
 ---
 
-## 📜 License
+# 📊 Evaluation Metrics
+
+The model was evaluated using:
+
+- Accuracy
+- Validation Loss
+- Confusion Matrix
+- Classification Report
+
+---
+
+# 💡 Future Improvements
+
+- Support more plant species
+- Mobile application integration
+- Real-time camera detection
+- Cloud deployment
+- Explainable AI visualizations
+- Multi-disease classification
+
+---
+
+
+# 📜 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## ⭐ Support
+# ⭐ Acknowledgements
 
-If you like this project, give it a ⭐ on GitHub!
+- PlantVillage Dataset
+- TensorFlow
+- Flask
+- Open Source AI Community
